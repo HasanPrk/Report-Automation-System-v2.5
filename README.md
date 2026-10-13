@@ -1,6 +1,6 @@
 # Smart Report Automation System
 
-> A local-first, AI-assisted reporting workstation that turns messy spreadsheets into structured, presentation-ready reports in a single end-to-end workflow — from data import and quality profiling to interactive charts, AI-drafted narrative, and PDF / DOCX / HTML / Markdown export.
+> A local, AI-assisted reporting workstation that turns messy spreadsheets into structured, presentation-ready reports in a single end-to-end workflow — from data import and quality profiling to interactive charts, AI-drafted narrative, and PDF / DOCX / HTML / Markdown export.
 
 ---
 
@@ -9,10 +9,9 @@
 ![Version](https://img.shields.io/badge/version-2.5.0-2f6fed)
 ![Python](https://img.shields.io/badge/python-3.8%2B-3776AB?logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-4A5568)
-![License](https://img.shields.io/badge/license-ToAdd-lightgrey)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 ![Status](https://img.shields.io/badge/status-personal%20project-orange)
 
-> The badges above reflect only verifiable facts. Replace the **License** badge once a `LICENSE` file is added to the repository.
 
 ---
 
@@ -36,7 +35,7 @@ After every data analysis engagement, the findings need to be packaged into a st
 - Apply branding (logo, colors, classification label, header/footer).
 - Export to PDF and ship.
 
-In practice, this stage routinely consumes **around 60 minutes per report**, and most of that time is spent on mechanical, low-value work: re-formatting tables, re-aligning charts, re-typing numbers, and re-applying the same template. The cognitive part — deciding what the data means — gets a fraction of the time it deserves.
+In practice, this stage routinely consumes **around 60 minutes or more per report**, and most of that time is spent on mechanical, low-value work: re-formatting tables, re-aligning charts, re-typing numbers, and re-applying the same template. The cognitive part — deciding what the data means — gets a fraction of the time it deserves.
 
 ---
 
@@ -54,33 +53,33 @@ Three design decisions make this different from a generic "AI report generator":
 
 ## Key Features
 
-### A. Data Import & Integration
+### Data Import & Integration
 - Import from **XLSX**, **CSV**, **Google Sheets links**, or pasted text.
 - Automatic **multi-sheet and multi-table detection** inside each Excel sheet (tables separated by fully empty rows/columns are recognized as distinct).
 - Power Query-style **Append** and **column-picker Join** between tables, with key columns preserved and a live preview of the merged output.
 
-### B. Data Quality Assessment
+### Data Quality Assessment
 - A **10-check profiler** covering structural issues, missing values, type consistency, invalid dates, numeric range and outliers, whitespace and categories, cross-column consistency, duplicates, and an overall summary.
 - A **6-stage quality journey** with a transparent quality score, so issues are surfaced before they reach the report.
 
-### C. Cleaning & Duplicates
+### Cleaning & Duplicates
 - Each cleaning operation goes through **preview → confirm → apply → undoable**, with per-cell manual overrides for any value the rule missed.
 - **Applied Steps navigation** (Power Query-style): every operation is a step with a snapshot; jump back to any step, delete it, and continue from there.
 - A dedicated **duplicate manager** for grouping, picking a retention policy, and applying it — all undoable.
 - Global **Undo/Redo** (up to 30 steps across all sections), with a safety boundary so undo can never cross past the data-import step and silently wipe the active dataset.
 
-### D. Calculations & KPIs
+### Calculations & KPIs
 - A calculation engine supporting **count, distinct, sum, mean, median, min, max, groupSum, groupMean, periodCompare, periodCount, pctFiltered, countFiltered**.
 - KPIs can be defined visually or via a JSON spec file (see `samples/custom-template-calcs.json`).
 
-### E. Interactive Chart Studio
+### Interactive Chart Studio
 - Built on **Chart.js 4.4.4** (vendored) plus a custom pure-SVG chart library for **infographic, treemap, heatmap, gauge, and textbox** visuals.
 - **Slicer engine** for cross-chart filtering (Excel-style) with include/exclude rules per chart.
 - **Drill-down** for every categorical chart, with breadcrumb navigation back to the top level.
 - **Iran choropleth map** with real province borders (GeoJSON from geoBoundaries) and drill-down to all 478 counties using OSM county centroids — without an internet connection.
 - Per-chart settings: title, axis labels, legend position, data label position, color palettes (corporate blue, calm green, modern purple, formal gray, or custom).
 
-### F. AI-Powered Report Generation
+### AI-Powered Report Generation
 - Three modes:
   - **Demo** — rule-based mock generation for offline preview.
   - **Manual (AI off)** — AI controls disabled; the template skeleton is built immediately so you can write and edit from the start.
@@ -90,23 +89,23 @@ Three design decisions make this different from a generic "AI report generator":
 - A **Test Connection** button validates the saved key with a minimal ping request.
 - The user retains **full final control**: every AI-drafted section can be edited, regenerated, rejected, reordered, or replaced with manual text.
 
-### G. Templates & Branding
+### Templates & Branding
 - Two built-in report templates plus **custom HTML templates** with `{{placeholder}}` syntax and a JSON calc-spec file.
 - Reports can be **Persian (RTL) or English (LTR)** with real bidirectional layout.
 - Upload a **logo** and **color palette**, set a **classification label** (Public / Internal / Confidential), and define report metadata (title, organization, period, author).
 
-### H. Preview & Export
+### Preview & Export
 - Live preview with a **secondary ribbon** for page size, orientation, margins, page breaks, zoom, and quick export — placed exactly above the preview area, never on top of the report.
 - Separate **Persian and English font** selection.
 - Export to **PDF** (via the browser's print dialog, with aligned headers/footers), **DOCX** (HTML-in-Word), **standalone HTML**, and **Markdown**.
 - Side outputs: cleaned data as **XLSX** or **CSV**, and transfer to **Google Sheets**.
 
-### I. Accounts & API Key Vault (Optional)
+### Accounts & API Key Vault (Optional)
 - Local **SQLite account system** with email + password registration, OTP-based email verification, recovery codes, and account lockout after repeated failed logins.
 - The AI API key is **encrypted server-side** (HMAC-CTR with encrypt-then-MAC, standard library only) and stored separately from the database. Only a masked hint (e.g. `sk-…1223`) is ever returned to the browser.
 - SMTP is **optional** — without it, the OTP is shown transparently in the UI (clearly labeled "local mode"), suitable for a single-user personal system.
 
-### J. Quality-of-Life
+### Quality-of-Life
 - Light and **dark themes**.
 - **Backup** of data and reports.
 - **Report history** panel.
@@ -149,7 +148,7 @@ Each step shows a real status indicator based on actual data state — not just 
 
 ## Reported Productivity Improvement
 
-Based on the developer's initial experience using the tool on their own reporting tasks:
+Based on my initial experience using the tool on my own reporting tasks:
 
 | Metric | Value |
 |---|---|
@@ -159,7 +158,7 @@ Based on the developer's initial experience using the tool on their own reportin
 | Relative reduction | ~83.3% |
 | Speed multiplier | ~6× |
 
-> ⚠️ **Important context.** These numbers are **developer-reported** from personal use, not the result of an independent, controlled benchmark. They are shared to give a concrete sense of the intended impact of the tool, not to make a verifiable performance claim. A formal measurement under controlled conditions was not performed.
+> ⚠️ **Important context.** These numbers are **My-reported** from personal use, not the result of an independent, controlled benchmark. They are shared to give a concrete sense of the intended impact of the tool, not to make a verifiable performance claim. A formal measurement under controlled conditions was not performed.
 
 No claims are made about financial impact, revenue lift, customer satisfaction, or error-rate reduction — there is no data to support those, and the project does not invent any.
 
@@ -167,9 +166,8 @@ No claims are made about financial impact, revenue lift, customer satisfaction, 
 
 ## Skills Demonstrated Through This Project
 
-This section is the heart of the README. It maps each skill to where in the project it was actually used, so recruiters and reviewers can verify claims against the code.
 
-### A. Data Analytics & Data Preparation
+### Data Analytics & Data Preparation
 
 | Skill | Where it shows up |
 |---|---|
@@ -181,7 +179,7 @@ This section is the heart of the README. It maps each skill to where in the proj
 | Data Visualization | `45-chart-builder.js`, `46-custom-charts.js`, `47-iran-map.js` |
 | Analytical Workflow Design | `25-workflow-manager.js`, `20-app-state.js` — the 9-step journey with real status tracking |
 
-### B. AI & Prompt Engineering
+### AI & Prompt Engineering
 
 | Skill | Where it shows up |
 |---|---|
@@ -192,7 +190,7 @@ This section is the heart of the README. It maps each skill to where in the proj
 | Using Agent Mode during development | The project was built with the **GLM 5.3 Flash Agent Mode** as the development assistant |
 | Managing and constraining AI output | Prompt rules (no fabricated numbers, exact-figure adherence), server-side proxy, key vault |
 
-### C. Software & Workflow Design
+### Software & Workflow Design
 
 | Skill | Where it shows up |
 |---|---|
@@ -204,7 +202,7 @@ This section is the heart of the README. It maps each skill to where in the proj
 | Export and Document Formatting | `97-pdf-exporter.js` — PDF, DOCX, HTML, Markdown, copy-text |
 | Feature Integration | The state layer in `20-app-state.js` ties import → clean → calc → chart → report → preview → export into one reactive flow |
 
-### D. Product Thinking & Problem Solving
+### Product Thinking & Problem Solving
 
 | Skill | Where it shows up |
 |---|---|
@@ -215,7 +213,7 @@ This section is the heart of the README. It maps each skill to where in the proj
 | Improving process productivity | The reported ~83% time reduction per report |
 | UX design for a multi-step workflow | Journey rail with real status, secondary ribbon for preview-only controls, transparent local mode |
 
-### E. Technical Skills
+### Technical Skills
 
 The list below distinguishes skills **demonstrated in the project** (verifiable in the code), skills **applied during development** (real but behind the scenes), and skills that are **potential next steps** (suggestions, not claimed experience).
 
@@ -243,18 +241,6 @@ The list below distinguishes skills **demonstrated in the project** (verifiable 
 | AI-assisted development workflow | Iterative, agent-mode code generation, then human review and integration |
 | Working without an external dependency manager | The project intentionally uses only Python stdlib and vendored JS — no `pip` or `npm` step |
 
-#### Potential Next-Step Skills (suggestions, not claimed)
-
-These are **not** claimed as current experience. They are listed as natural follow-ups for the project's roadmap.
-
-- Containerized deployment (Docker) for team use
-- Automated end-to-end testing (Playwright / Cypress)
-- CI/CD pipeline (GitHub Actions) for lint + test on push
-- Cloud-hosted multi-user deployment
-- Reproducible reporting pipelines (parametrized, version-pinned datasets)
-- Plugin architecture for custom data sources and chart types
-
-> Note: This project does not claim "expert", "advanced", "production-grade", or "professional-level" proficiency in any of the technologies above. The claims are scoped to what the code actually demonstrates.
 
 ---
 
@@ -586,8 +572,6 @@ These are **suggestions for future development**, not current features. They are
 
 ## What I Learned
 
-This section is written in first person, because it reflects what I actually took away from building this project.
-
 - **Turning a recurring pain into a system.** I had spent roughly an hour after every analysis project just packaging the results into a report. The biggest lesson was that the pain wasn't "reporting is hard" — it was "reporting is the same set of mechanical steps every time, and none of them require me to think." Identifying that distinction is what made the system possible: the AI does the part that benefits from a first draft, and the human keeps the part that requires judgment.
 
 - **Designing a workflow, not a feature list.** The 9-step journey is the actual deliverable. Each step had to be self-contained enough to be useful alone, but connected enough that the output of one step is the input of the next. The state layer in `20-app-state.js` ended up being the most important file in the project — everything else is a view onto it.
@@ -608,45 +592,12 @@ This section is written in first person, because it reflects what I actually too
 
 > 
 >
-> - **Author:** [MohammadHasanPourkabgani]
+> - **Author:** [Author Name](MohammadHasanPourkabgani)
 > - **LinkedIn** — [MohammadHasan Pourkabgani](https://www.linkedin.com/in/mohammadhasan-pourkabgani/)
 > - **GitHub** — [Hasanprk](https://github.com/Hasanprk)
 >  - **Email** — mh.pourkabgani91@gmail.com
 
-If you found this project useful or have any feedback, I'd genuinely love to hear it! 
 
 I built this project to solve a real problem in my own analytics workflow and to demonstrate end-to-end system design, prompt engineering, and data preparation skills. I'm happy to discuss the architecture, the prompt strategy, or potential collaboration — feel free to open an issue or reach out via the contact details above.
 
 ---
-
-## License
-
-> 📌 **Placeholder.** No `LICENSE` file is currently included in the repository.
->
-> To publish this repository, add a `LICENSE` file at the repository root. A common choice for personal portfolio projects is the [MIT License](https://choosealicense.com/licenses/mit/), but you should pick the one that matches your intent. Once added, replace this section with the license name and a link to the `LICENSE` file.
-
----
-
-## Placeholders to Complete Before Publishing
-
-The following items in this README are explicit placeholders. They are listed here so you can find and replace them in one pass before publishing the repository publicly.
-
-| Placeholder | Where it appears | What to provide |
-|---|---|---|
-| `[INSERT REPO URL]` (in **Installation and Setup**) | Quick start step 1 | The actual `git clone` URL of your repository |
-| `[INSERT REPO URL]` (in **Author / Contact**) | Repository line | The browsable repository URL |
-| `[INSERT YOUR NAME]` | Author section | Your name as you want it attributed |
-| `[INSERT YOUR GITHUB HANDLE / PROFILE URL]` | GitHub line | Your GitHub profile URL |
-| `[INSERT CONTACT EMAIL — optional]` | Email line | Your contact email (omit if you prefer) |
-| `[INSERT LINKEDIN URL — optional]` | LinkedIn line | Your LinkedIn profile URL (omit if you prefer) |
-| **Screenshots / Demo section** | The whole section | Add the screenshots and `docs/demo.mp4` listed there |
-| **License badge + License section** | Badges + License section | Add a `LICENSE` file and update the badge/section to match |
-
-### To turn this README into the final published version
-
-1. Fill in the placeholders above.
-2. Add a `LICENSE` file at the repository root.
-3. Capture the screenshots listed in the **Screenshots / Demo** section and add them under `docs/screenshots/`.
-4. (Optional) Record a 60-second end-to-end demo and save it as `docs/demo.mp4`.
-5. Confirm that `data/`, `*.db`, and `data/secrets/master.key` are still in `.gitignore` before pushing — they already are, but double-check before publishing.
-6. Push, and the repository is ready to share.
