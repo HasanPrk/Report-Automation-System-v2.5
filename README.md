@@ -365,24 +365,42 @@ All data processing (import, profiling, cleaning, calculations, charts) happens 
 ## Screenshots 
 
 
->  ![importing data](docs/screenshots/dashboard-&-nightmode.jpg) — Dashboard view in Dark mode.
->  ![importing data](docs/screenshots/connecting-to-real-ai.jpg) — Connecting to real AI.
->  ![importing data](docs/screenshots/account-creating.jpg) — Account creating view.
->  ![importing data](docs/screenshots/import1.jpg) — the data import view with a multi-table Excel file detected.
->  ![importing data](docs/screenshots/import2.jpg) — the data import view with a multi-table Excel file detected.
->  ![importing data](docs/screenshots/quality.jpg) — the 10-check quality profiler.
->  ![importing data](docs/screenshots/clean.jpg)   — Cleaning the messy data.
->  ![importing data](docs/screenshots/report-template.jpg) — Report template.
->  ![importing data](docs/screenshots/calculation.jpg) — Power Query-style applied-steps navigation.
->  ![importing data](docs/screenshots/charts1.jpg) — the chart studio with a Slicer active.
->  ![importing data](docs/screenshots/charts2.jpg) — the Iran choropleth with drill-down to a county.
->  ![importing data](docs/screenshots/charts3.jpg) — A bar chart in chart studio.
->  ![importing data](docs/screenshots/charts4.jpg) — A area chart in chart studio.
->  ![importing data](docs/screenshots/report-generating1.jpg) — AI draft with the editing panel open.
->  ![importing data](docs/screenshots/report-generating2.jpg) — AI draft with the editing panel open.
->  ![importing data](docs/screenshots/report-preview1.jpg) — the preview ribbon with a custom logo and palette.
->  ![importing data](docs/screenshots/report-preview2.jpg) — the preview ribbon with a custom logo and palette.
->  ![importing data](docs/screenshots/export-preview.jpg) — the export menu.
+  ![importing data](docs/screenshots/dashboard-&-nightmode.jpg) — Dashboard view in Dark mode.
+  
+  ![importing data](docs/screenshots/connecting-to-real-ai.jpg) — Connecting to real AI.
+  
+  ![importing data](docs/screenshots/account-creating.jpg) — Account creating view.
+  
+  ![importing data](docs/screenshots/import1.jpg) — the data import view with a multi-table Excel file detected.
+  
+  ![importing data](docs/screenshots/import2.jpg) — the data import view with a multi-table Excel file detected.
+  
+  ![importing data](docs/screenshots/quality.jpg) — the 10-check quality profiler.
+  
+  ![importing data](docs/screenshots/clean.jpg)   — Cleaning the messy data.
+  
+  ![importing data](docs/screenshots/report-template.jpg) — Report template.
+  
+  ![importing data](docs/screenshots/calculation.jpg) — Power Query-style applied-steps navigation.
+  
+  ![importing data](docs/screenshots/charts1.jpg) — the chart studio with a Slicer active.
+  
+  ![importing data](docs/screenshots/charts2.jpg) — the Iran choropleth with drill-down to a county.
+  
+  ![importing data](docs/screenshots/charts3.jpg) — A bar chart in chart studio.
+  
+  ![importing data](docs/screenshots/charts4.jpg) — A area chart in chart studio.
+  
+  ![importing data](docs/screenshots/report-generating1.jpg) — AI draft with the editing panel open.
+  
+  ![importing data](docs/screenshots/report-generating2.jpg) — AI draft with the editing panel open.
+  
+  ![importing data](docs/screenshots/report-preview1.jpg) — the preview ribbon with a custom logo and palette.
+  
+  ![importing data](docs/screenshots/report-preview2.jpg) — the preview ribbon with a custom logo and palette.
+  
+  ![importing data](docs/screenshots/export-preview.jpg) — the export menu.
+
 
 
 ---
