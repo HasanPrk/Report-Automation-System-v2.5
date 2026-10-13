@@ -592,7 +592,7 @@ These are **suggestions for future development**, not current features. They are
 
 > 
 >
-> - **Author:** [Author Name](MohammadHasanPourkabgani)
+> - **Author:** — MohammadHasanPourkabgani
 > - **LinkedIn** — [MohammadHasan Pourkabgani](https://www.linkedin.com/in/mohammadhasan-pourkabgani/)
 > - **GitHub** — [Hasanprk](https://github.com/Hasanprk)
 >  - **Email** — mh.pourkabgani91@gmail.com
